@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Visibility Prediction</h1>
+        <form id="predictionForm">
+            <div class="form-group">
+                <label for="drybulb">Dry Bulb Temperature (°F)</label>
+                <input type="number" id="drybulb" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="humidity">Relative Humidity (%)</label>
+                <input type="number" id="humidity" step="0.1" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="windspeed">Wind Speed (mph)</label>
+                <input type="number" id="windspeed" step="0.1" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="winddirection">Wind Direction (degrees)</label>
+                <input type="number" id="winddirection" step="1" min="0" max="360" required>
+            </div>
+            <div class="form-group">
+                <label for="pressure">Sea Level Pressure (inHg)</label>
+                <input type="number" id="pressure" step="0.01" required>
+            </div>
+            <button type="submit">Predict Visibility</button>
+        </form>
+        <div id="result" class="result hidden">
+            <h2>Predicted Visibility</h2>
+            <p id="prediction"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
