@@ -9,8 +9,13 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
         SealevelPressure: parseFloat(document.getElementById('pressure').value)
     };
     
+    // Use relative URL so it works both locally and on Render
+    const apiUrl = window.location.hostname === 'localhost' 
+        ? 'http://localhost:5000/predict' 
+        : '/predict';
+    
     try {
-        const response = await fetch('http://localhost:5000/predict', {
+        const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,5 +33,5 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
         }
     } catch (error) {
         alert('Failed to connect to server. Make sure the backend is running.');
-    };
+    }
 });
