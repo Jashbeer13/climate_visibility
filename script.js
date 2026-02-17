@@ -28,5 +28,5 @@ document.getElementById('predictionForm').addEventListener('submit', async (e) =
         }
     } catch (error) {
         alert('Failed to connect to server. Make sure the backend is running.');
-    }
+    };
 });
